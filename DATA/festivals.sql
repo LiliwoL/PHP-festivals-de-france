@@ -21,6 +21,10 @@ SET time_zone = "+00:00";
 -- Base de données : `festivals`
 --
 
+CREATE DATABASE IF NOT EXISTS festivals;
+
+USE festivals;
+
 -- --------------------------------------------------------
 
 --
