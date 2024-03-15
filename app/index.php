@@ -1,17 +1,15 @@
-<?php
-    // Include the file that contains the connection to the database
-    require_once 'inc/connexion.php';
-
-    // Get the connection to the database
-    $pdo = connectDb();
-?>
 <h1>Liste des festivals de France</h1>
+<?php
+    require('inc/init.php');
+    require('inc/festivals.php');
+?>
+
+<h1>Liste des festivals de France</h1>
+
 
 <?php
     // Get the list of festivals
-    $sql = 'SELECT * FROM festivals ORDER BY nom_du_festival ASC';
-    $stmt = $pdo->query($sql);
-    $festivals = $stmt->fetchAll();
+    $festivals = selectAllFestivals();
 
 
      if (empty($festivals)) :
