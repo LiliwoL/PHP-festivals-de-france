@@ -1,11 +1,11 @@
 <h1>Liste des festivals de France</h1>
 <?php
+    // Include the file that contains the connexion function
     require('inc/init.php');
     require('inc/festivals.php');
 ?>
 
 <h1>Liste des festivals de France</h1>
-
 
 <?php
     // Get the list of festivals

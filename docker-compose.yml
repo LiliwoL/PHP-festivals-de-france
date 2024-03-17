@@ -41,6 +41,8 @@ services:
     # Volumes partagés entre l'hôte et le container
     volumes:
       - ./db_data:/var/lib/mysql
+      # Script SQL utilisé au démarrage du container
+      - ./DATA/festivals.sql:/docker-entrypoint-initdb.d/init.sql
 
     # Variables d'environnement définies dans le fichier .env
     # https://mariadb.com/kb/en/mariadb-server-docker-official-image-environment-variables/
@@ -92,8 +94,8 @@ services:
     # https://docs.phpmyadmin.net/en/latest/setup.html#docker-environment-variables
     environment:
       # A quel hôte
-      PMA_HOST: festivals-db
-      PMA_PORT: 3306
+      PMA_HOST: "${DB_HOST}"
+      PMA_PORT: "${DB_PORT}"
       PMA_USER: "${DB_USER}"
       PMA_PASSWORD: "${DB_PASSWORD}"
       UPLOAD_LIMIT: 50M
