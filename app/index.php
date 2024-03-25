@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <title>Liste des festivals de France</title>
 </head>
 <body>
-
     <h1>Liste des festivals de France</h1>
     <?php
         // Include the file that contains the connexion function
